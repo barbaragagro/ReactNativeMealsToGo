@@ -43,8 +43,15 @@ export default function RestaurantsInfoCard({ restaurant = {} }) {
         <Text variant="label">{name}</Text>
         <Rating>
           <Stars>
-            {ratingA.map(() => {
-              return <SvgXml xml={star} width={20} height={20} />;
+            {ratingA.map((_, i) => {
+              return (
+                <SvgXml
+                  key={`star-${placeId}-${i}`}
+                  xml={star}
+                  width={20}
+                  height={20}
+                />
+              );
             })}
           </Stars>
           <IconsEnd>
