@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { FlatList, TouchableOpacity, View } from "react-native";
 import { ActivityIndicator } from "react-native-paper";
 import styled from "styled-components";
-import SearchLocationBar from "../../../components/searchbar/search.component";
+import { Search } from "../../../components/searchbar/restaurants.search.component";
 import { RestaurantsContext } from "../../../services/restaurants/mock/restaurants.context";
 import RestaurantsInfoCard from "../components/restaurant-info-card.component";
 import { SafeArea } from "../../../components/utility/safe-area.component";
@@ -25,7 +25,7 @@ export default function RestaurantsScreen({ navigation }) {
   return (
     <SafeArea>
       <SearchContainer>
-        <SearchLocationBar />
+        <Search />
       </SearchContainer>
       {isLoading && <Loading size={50} animating={true} color="tomato" />}
       <RestaurantList
